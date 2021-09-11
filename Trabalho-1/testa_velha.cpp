@@ -26,6 +26,12 @@ TEST_CASE("Testa empate na linha")
 	REQUIRE(VerificaLinha(test) == -1);
 }
 
+TEST_CASE("Testa linha vazia")
+{
+	int test[3] = {0, 0, 0};
+	REQUIRE(VerificaLinha(test) == -1);
+}
+
 TEST_CASE("Testa coluna")
 {
 	int teste1[3][3] = {{2, 0, 1},
@@ -34,6 +40,13 @@ TEST_CASE("Testa coluna")
 	REQUIRE(VerificaColuna(teste1, 0) == -1);
 	REQUIRE(VerificaColuna(teste1, 1) == -1);
 	REQUIRE(VerificaColuna(teste1, 2) == 1);
+}
+
+TEST_CASE("Testa diagonal")
+{
+	int teste1[3][3] = { {0, 1, 1},
+						 {0, 1, 2},
+						 {1, 0, 0} }
 }
 
 TEST_CASE("Testa velha", "[single-file]")
