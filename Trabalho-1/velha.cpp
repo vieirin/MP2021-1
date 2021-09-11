@@ -21,14 +21,14 @@ int VerificaLinha(int linha[3])
 {
 	if (!linha[0])
 	{
-		return 0;
+		return -1;
 	}
 
 	for (auto elem = 1; elem < 3; elem++)
 	{
 		if (linha[elem] != linha[elem - 1])
 		{
-			return 0;
+			return -1;
 		}
 	}
 
