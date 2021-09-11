@@ -3,7 +3,6 @@
  */
 
 #include "velha.hpp"
-#include <iostream>
 
 /** 
  * @brief verifica situacao do jogo da velha  
@@ -97,6 +96,24 @@ int countPlayer(int velha[3][3], Player player)
 	return count;
 }
 
+int countPlays(int velha[3][3], Player player)
+{
+	auto count = 0;
+	for (auto i = 0; i < 3; i++)
+	{
+		for (auto j = 0; j < 3; j++)
+		{
+			if (velha[i][j] == static_cast<int>(player))
+			{
+				count++;
+			}
+		}
+	}
+
+	return count;
+}
+
 bool isImpossibleGame(int velha[3][3])
 {
+	return false;
 }

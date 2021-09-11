@@ -67,3 +67,12 @@ TEST_CASE("Testa Velha diagonal")
 						{0, 2, 2}};
 	REQUIRE(VerificaVelha(teste1) == 2);
 }
+
+TEST_CASE("Testa numero de jogadas do jogador")
+{
+	int teste1[3][3] = {{2, 0, 1},
+						{2, 2, 1},
+						{0, 2, 2}};
+	REQUIRE(countPlays(teste1, Player.X) == 5);
+	REQUIRE(countPlays(teste1, Player.O) == 1);
+}
