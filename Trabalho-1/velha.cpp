@@ -33,6 +33,15 @@ int VerificaVelha(int velha[3][3])
 		}
 	}
 
+	for (auto i = 0; i < 2; i++)
+	{
+		auto result = VerificaDiagonal(velha, static_cast<Direcao>(i));
+		if (result == 1 || result == 2)
+		{
+			return result;
+		}
+	}
+
 	return 0; /*!< retorna zero para teste */
 }
 
@@ -72,4 +81,22 @@ int VerificaDiagonal(int velha[3][3], Direcao direction)
 	}
 
 	return VerificaLinha(column);
+}
+
+int countPlayer(int velha[3][3], Player player)
+{
+	int count = 0;
+	for (auto i = 0; i < 3; i++)
+	{
+		for (auto j = 0; j < 3; j++)
+		{
+			if (velha[i][j] == static_cast<int>(player))
+				count++;
+		}
+	}
+	return count;
+}
+
+bool isImpossibleGame(int velha[3][3])
+{
 }
