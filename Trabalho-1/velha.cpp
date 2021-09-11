@@ -2,7 +2,6 @@
  * \file  velha.cpp
  */
 
-
 #include "velha.hpp"
 
 /** 
@@ -11,15 +10,27 @@
  * @param  velha descreve o parametro
  * 
  *  Descrever o que a funcao faz
- */ 
+ */
 
-int VerificaVelha( int velha[3][3] )
+int VerificaVelha(int velha[3][3])
 {
 	return 0; /*!< retorna zero para teste */
 }
 
+int VerificaLinha(int linha[3])
+{
+	if (!linha[0])
+	{
+		return 0;
+	}
 
-int VerificaLinha (int linha[3]) { 
-	return 0;
+	for (auto elem = 1; elem < 3; elem++)
+	{
+		if (linha[elem] != linha[elem - 1])
+		{
+			return 0;
+		}
+	}
+
+	return linha[0];
 }
-
