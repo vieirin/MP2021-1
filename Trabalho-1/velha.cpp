@@ -19,3 +19,7 @@ int VerificaVelha( int velha[3][3] )
 }
 
 
+int VerificaLinha (int linha[3]) { 
+	return 0;
+}
+

@@ -1,3 +1,6 @@
 *.gcno
 
 testa_velha
+
+build
+build/*/**
