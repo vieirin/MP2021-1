@@ -3,7 +3,7 @@
  */
 
 #include "velha.hpp"
-
+#include "math.h"
 /** 
  * @brief verifica situacao do jogo da velha  
  * @author Programador 
@@ -115,5 +115,10 @@ int countPlays(int velha[3][3], Player player)
 
 bool isImpossibleGame(int velha[3][3])
 {
+	if (abs(countPlays(velha, X) - countPlays(velha, O)) > 2)
+	{
+		return true;
+	}
+
 	return false;
 }
