@@ -93,4 +93,9 @@ TEST_CASE("Testa é jogo impossível")
 						{2, 2, 2},
 						{2, 2, 2}};
 	REQUIRE(isImpossibleGame(teste3) == true);
+
+	int teste4[3][3] = {{1, 1, 1},
+						{1, 1, 1},
+						{1, 1, 1}};
+	REQUIRE(isImpossibleGame(teste4) == true);
 }
