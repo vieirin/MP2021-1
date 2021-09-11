@@ -9,8 +9,8 @@ enum Direcao
 
 enum Player
 {
-    X,
-    O
+    X = 2,
+    O = 1
 };
 
 int VerificaVelha(int velha[3][3]);

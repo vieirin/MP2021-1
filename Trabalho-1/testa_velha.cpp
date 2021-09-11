@@ -73,8 +73,8 @@ TEST_CASE("Testa numero de jogadas do jogador")
 	int teste1[3][3] = {{2, 0, 1},
 						{2, 2, 1},
 						{0, 2, 2}};
-	REQUIRE(countPlays(teste1, Player.X) == 5);
-	REQUIRE(countPlays(teste1, Player.O) == 1);
+	REQUIRE(countPlays(teste1, X) == 5);
+	REQUIRE(countPlays(teste1, O) == 2);
 }
 
 TEST_CASE("Testa é jogo impossível")
@@ -82,5 +82,15 @@ TEST_CASE("Testa é jogo impossível")
 	int teste1[3][3] = {{2, 0, 1},
 						{2, 2, 1},
 						{0, 2, 2}};
-	REQUIRE(isImpossibleGame(teste1) == false);
+	REQUIRE(isImpossibleGame(teste1) == true);
+
+	int teste2[3][3] = {{2, 0, 1},
+						{2, 2, 1},
+						{0, 0, 0}};
+	REQUIRE(isImpossibleGame(teste2) == false);
+
+	int teste3[3][3] = {{2, 2, 2},
+						{2, 2, 2},
+						{2, 2, 2}};
+	REQUIRE(isImpossibleGame(teste3) == true);
 }

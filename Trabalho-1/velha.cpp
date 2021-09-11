@@ -115,7 +115,14 @@ int countPlays(int velha[3][3], Player player)
 
 bool isImpossibleGame(int velha[3][3])
 {
-	if (abs(countPlays(velha, X) - countPlays(velha, O)) > 2)
+	auto xplays = countPlays(velha, X);
+	auto oplays = countPlays(velha, O);
+	if (xplays == 9 || oplays == 9)
+	{
+		return true;
+	}
+
+	if (abs(xplays - oplays) > 2)
 	{
 		return true;
 	}
