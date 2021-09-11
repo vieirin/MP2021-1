@@ -26,6 +26,16 @@ TEST_CASE("Testa empate na linha")
 	REQUIRE(VerificaLinha(test) == -1);
 }
 
+TEST_CASE("Testa coluna")
+{
+	int teste1[3][3] = {{2, 0, 1},
+						{2, 0, 1},
+						{0, 2, 1}};
+	REQUIRE(VerificaColuna(teste1, 0) == -1);
+	REQUIRE(VerificaColuna(teste1, 1) == -1);
+	REQUIRE(VerificaColuna(teste1, 2) == 1);
+}
+
 TEST_CASE("Testa velha", "[single-file]")
 {
 	int teste1[3][3] = {{2, 0, 1},
