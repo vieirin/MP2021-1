@@ -3,6 +3,7 @@
  */
 
 #include "velha.hpp"
+#include <iostream>
 
 /** 
  * @brief verifica situacao do jogo da velha  
@@ -58,5 +59,17 @@ int VerificaColuna(int velha[3][3], int col)
 	int column[3] = {velha[0][col],
 					 velha[1][col],
 					 velha[2][col]};
+	return VerificaLinha(column);
+}
+
+int VerificaDiagonal(int velha[3][3], Direcao direction)
+{
+	int column[3];
+	auto i = 0;
+	for (auto j = (direction == esquerda ? 0 : 2); (direction == esquerda ? j < 3 : j >= 0); direction == esquerda ? j++ : j--, i++)
+	{
+		column[i] = velha[i][j];
+	}
+
 	return VerificaLinha(column);
 }

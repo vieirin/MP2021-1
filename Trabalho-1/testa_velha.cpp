@@ -44,9 +44,12 @@ TEST_CASE("Testa coluna")
 
 TEST_CASE("Testa diagonal")
 {
-	int teste1[3][3] = { {0, 1, 1},
-						 {0, 1, 2},
-						 {1, 0, 0} }
+	int teste1[3][3] = {{0, 1, 1},
+						{0, 1, 2},
+						{1, 0, 0}};
+
+	REQUIRE(VerificaDiagonal(teste1, esquerda) == -1);
+	REQUIRE(VerificaDiagonal(teste1, direita) == 1);
 }
 
 TEST_CASE("Testa velha", "[single-file]")

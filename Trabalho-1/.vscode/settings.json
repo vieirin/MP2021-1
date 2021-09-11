@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.spyx": "python",
+    "*.sage": "python",
+    "*.sh": "shellscript",
+    "iostream": "cpp"
+  }
+}
