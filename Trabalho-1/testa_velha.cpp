@@ -58,13 +58,18 @@ TEST_CASE("Testa velha", "[single-file]")
 						{2, 0, 1},
 						{0, 2, 1}};
 	REQUIRE(VerificaVelha(teste1) == 1);
+
+	int teste2[3][3] = {{2, 2, 1},
+						{2, 0, 2},
+						{1, 1, 1}};
+	REQUIRE(VerificaVelha(teste2) == 1);
 }
 
 TEST_CASE("Testa Velha diagonal")
 {
 	int teste1[3][3] = {{2, 0, 1},
 						{2, 2, 1},
-						{0, 2, 2}};
+						{0, 1, 2}};
 	REQUIRE(VerificaVelha(teste1) == 2);
 }
 
@@ -98,4 +103,23 @@ TEST_CASE("Testa é jogo impossível")
 						{1, 1, 1},
 						{1, 1, 1}};
 	REQUIRE(isImpossibleGame(teste4) == true);
+}
+
+TEST_CASE("Testa jogo indefinido")
+{
+	int teste1[3][3] = {{0, 0, 1},
+						{0, 0, 0},
+						{0, 0, 0}};
+	REQUIRE(VerificaVelha(teste1) == -1);
+
+	int teste2[3][3] = {{0, 0, 2},
+						{0, 0, 0},
+						{0, 0, 0}};
+	REQUIRE(VerificaVelha(teste1) == -1);
+
+	int teste3[3][3] = {{2, 0, 1},
+						{1, 2, 1},
+						{0, 0, 2}};
+
+	REQUIRE_FALSE(VerificaVelha(teste3) == -1);
 }

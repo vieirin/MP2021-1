@@ -14,6 +14,11 @@
 
 int VerificaVelha(int velha[3][3])
 {
+	if (isImpossibleGame(velha))
+	{
+		return -2;
+	}
+
 	for (auto i = 0; i < 3; i++)
 	{
 		auto result = VerificaLinha(velha[i]);
@@ -41,7 +46,7 @@ int VerificaVelha(int velha[3][3])
 		}
 	}
 
-	return 0; /*!< retorna zero para teste */
+	return -1; /*!< retorna zero para teste */
 }
 
 int VerificaLinha(int linha[3])
