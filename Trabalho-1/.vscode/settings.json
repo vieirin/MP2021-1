@@ -4,5 +4,8 @@
     "*.sage": "python",
     "*.sh": "shellscript",
     "iostream": "cpp"
-  }
+  },
+  "gcovViewer.buildDirectories": [
+    "/home/vieira/vieiramanoel/MP2021-1/Trabalho-1"
+  ]
 }
