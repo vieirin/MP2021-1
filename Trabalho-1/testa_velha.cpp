@@ -123,3 +123,11 @@ TEST_CASE("Testa jogo indefinido")
 
 	REQUIRE_FALSE(VerificaVelha(teste3) == -1);
 }
+
+TEST_CASE("Testa empate")
+{
+	int teste1[3][3] = {{1, 2, 1},
+						{2, 1, 2},
+						{2, 1, 2}};
+	REQUIRE(VerificaVelha(teste1) == 0);
+}

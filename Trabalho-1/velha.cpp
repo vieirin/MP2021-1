@@ -6,10 +6,10 @@
 #include "math.h"
 /** 
  * @brief verifica situacao do jogo da velha  
- * @author Programador 
- * @param  velha descreve o parametro
+ * @author Manoel Vieira 
+ * @param  velha Matrix 3x3 com valores entre 0-3
  * 
- *  Descrever o que a funcao faz
+ *  Verifica se o jogo recebido tem um ganhador, se é impossível 
  */
 
 int VerificaVelha(int velha[3][3])
