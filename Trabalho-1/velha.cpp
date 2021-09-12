@@ -46,6 +46,11 @@ int VerificaVelha(int velha[3][3])
 		}
 	}
 
+	if (isDraw(velha))
+	{
+		return 0;
+	}
+
 	return -1; /*!< retorna zero para teste */
 }
 
