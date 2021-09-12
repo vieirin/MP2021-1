@@ -20,4 +20,5 @@ int VerificaDiagonal(int velha[3][3], Direcao dir);
 int countPlays(int velha[3][3], Player players);
 bool isImpossibleGame(int velha[3][3]);
 bool isDraw(int velha[3][3]);
+
 #endif //!__VELHA__H__

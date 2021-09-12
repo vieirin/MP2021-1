@@ -73,6 +73,16 @@ TEST_CASE("Testa velha", "[single-file]")
 						{0, 1, 2},
 						{2, 1, 1}};
 	REQUIRE(VerificaVelha(teste4) == -1);
+
+	int teste5[3][3] = {{2, 2, 2},
+						{1, 1, 1},
+						{0, 0, 0}};
+	REQUIRE(VerificaVelha(teste5) == -2);
+
+	int teste6[3][3] = {{1, 2, 0},
+						{1, 2, 0},
+						{1, 2, 0}};
+	REQUIRE(VerificaVelha(teste6) == -2);
 }
 
 TEST_CASE("Testa Velha diagonal")
