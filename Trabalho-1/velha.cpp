@@ -118,6 +118,21 @@ int countPlays(int velha[3][3], Player player)
 	return count;
 }
 
+bool isDraw(int velha[3][3])
+{
+	for (auto i = 0; i < 3; i++)
+	{
+		for (auto j = 0; j < 3; j++)
+		{
+			if (velha[i][j] == 0)
+			{
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
 bool isImpossibleGame(int velha[3][3])
 {
 	auto xplays = countPlays(velha, X);
