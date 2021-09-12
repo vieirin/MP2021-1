@@ -1,2 +1,4 @@
 com o g++ e o make instalado 
 digite "make" neste diretório
+
+documentação disponível em: https://vieirin.github.io/MP2021-1/
