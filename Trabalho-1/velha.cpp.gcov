@@ -1,7 +1,7 @@
         -:    0:Source:velha.cpp
         -:    0:Graph:velha.gcno
-        -:    0:Data:-
-        -:    0:Runs:0
+        -:    0:Data:velha.gcda
+        -:    0:Runs:2
         -:    1:/**
         -:    2: * \file  velha.cpp
         -:    3: */
@@ -16,41 +16,41 @@
         -:   12: * 
         -:   13: *  Verifica se o jogo recebido tem um ganhador, se é impossível 
         -:   14: */
-    #####:   15:int VerificaVelha(int velha[3][3])
+       21:   15:int VerificaVelha(int velha[3][3])
         -:   16:{
-    #####:   17:	if (isImpossibleGame(velha))
+       21:   17:	if (isImpossibleGame(velha))
         -:   18:	{
-    #####:   19:		return -2;
+        4:   19:		return -2;
         -:   20:	}
         -:   21:
-    #####:   22:	for (auto i = 0; i < 3; i++)
+       65:   22:	for (auto i = 0; i < 3; i++)
         -:   23:	{
-    #####:   24:		auto result = VerificaLinha(velha[i]);
-    #####:   25:		if (result == 1 || result == 2)
+       49:   24:		auto result = VerificaLinha(velha[i]);
+       49:   25:		if (result == 1 || result == 2)
         -:   26:		{
-    #####:   27:			return result;
+        1:   27:			return result;
         -:   28:		}
         -:   29:	}
         -:   30:
-    #####:   31:	for (auto i = 0; i < 3; i++)
+       56:   31:	for (auto i = 0; i < 3; i++)
         -:   32:	{
-    #####:   33:		auto result = VerificaColuna(velha, i);
-    #####:   34:		if (result == 1 || result == 2)
+       44:   33:		auto result = VerificaColuna(velha, i);
+       44:   34:		if (result == 1 || result == 2)
         -:   35:		{
-    #####:   36:			return result;
+        4:   36:			return result;
         -:   37:		}
         -:   38:	}
         -:   39:
-    #####:   40:	for (auto i = 0; i < 2; i++)
+       32:   40:	for (auto i = 0; i < 2; i++)
         -:   41:	{
-    #####:   42:		auto result = VerificaDiagonal(velha, static_cast<Direcao>(i));
-    #####:   43:		if (result == 1 || result == 2)
+       24:   42:		auto result = VerificaDiagonal(velha, static_cast<Direcao>(i));
+       24:   43:		if (result == 1 || result == 2)
         -:   44:		{
-    #####:   45:			return result;
+        4:   45:			return result;
         -:   46:		}
         -:   47:	}
         -:   48:
-    #####:   49:	return isDraw(velha) ? 0 : -1;
+        8:   49:	return isDraw(velha) ? 0 : -1;
         -:   50:}
         -:   51:
         -:   52:/** 
@@ -63,22 +63,22 @@
         -:   59: * (indefinido);
         -:   60: * 
         -:   61: */
-    #####:   62:int VerificaLinha(int linha[3])
+      267:   62:int VerificaLinha(int linha[3])
         -:   63:{
-    #####:   64:	if (!linha[0])
+      267:   64:	if (!linha[0])
         -:   65:	{
-    #####:   66:		return -1;
+       98:   66:		return -1;
         -:   67:	}
         -:   68:
-    #####:   69:	for (auto elem = 1; elem < 3; elem++)
+      275:   69:	for (auto elem = 1; elem < 3; elem++)
         -:   70:	{
-    #####:   71:		if (linha[elem] != linha[elem - 1])
+      245:   71:		if (linha[elem] != linha[elem - 1])
         -:   72:		{
-    #####:   73:			return -1;
+      139:   73:			return -1;
         -:   74:		}
         -:   75:	}
         -:   76:
-    #####:   77:	return linha[0];
+       30:   77:	return linha[0];
         -:   78:}
         -:   79:
         -:   80:/** 
@@ -91,12 +91,12 @@
         -:   87: * de VerificaLinha
         -:   88: * 
         -:   89: */
-    #####:   90:int VerificaColuna(int velha[3][3], int col)
+      113:   90:int VerificaColuna(int velha[3][3], int col)
         -:   91:{
-    #####:   92:	int column[3] = {velha[0][col],
-    #####:   93:					 velha[1][col],
-    #####:   94:					 velha[2][col]};
-    #####:   95:	return VerificaLinha(column);
+      113:   92:	int column[3] = {velha[0][col],
+      113:   93:					 velha[1][col],
+      113:   94:					 velha[2][col]};
+      113:   95:	return VerificaLinha(column);
         -:   96:}
         -:   97:
         -:   98:/** 
@@ -109,17 +109,17 @@
         -:  105: * de VerificaLinha
         -:  106: * 
         -:  107: */
-    #####:  108:int VerificaDiagonal(int velha[3][3], Direcao dir)
+       28:  108:int VerificaDiagonal(int velha[3][3], Direcao dir)
         -:  109:{
         -:  110:	int column[3];
-    #####:  111:	auto i = 0;
+       28:  111:	auto i = 0;
         -:  112:
-    #####:  113:	for (auto j = (dir == esquerda ? 0 : 2); (dir == esquerda ? j < 3 : j >= 0); dir == esquerda ? j++ : j--, i++)
+      112:  113:	for (auto j = (dir == esquerda ? 0 : 2); (dir == esquerda ? j < 3 : j >= 0); dir == esquerda ? j++ : j--, i++)
         -:  114:	{
-    #####:  115:		column[i] = velha[i][j];
+       84:  115:		column[i] = velha[i][j];
         -:  116:	}
         -:  117:
-    #####:  118:	return VerificaLinha(column);
+       28:  118:	return VerificaLinha(column);
         -:  119:}
         -:  120:
         -:  121:/** 
@@ -132,21 +132,21 @@
         -:  128: * do jogados player no jogo recebido
         -:  129: * 
         -:  130: */
-    #####:  131:int countPlays(int velha[3][3], Player player)
+       62:  131:int countPlays(int velha[3][3], Player player)
         -:  132:{
-    #####:  133:	auto count = 0;
-    #####:  134:	for (auto i = 0; i < 3; i++)
+       62:  133:	auto count = 0;
+      248:  134:	for (auto i = 0; i < 3; i++)
         -:  135:	{
-    #####:  136:		for (auto j = 0; j < 3; j++)
+      744:  136:		for (auto j = 0; j < 3; j++)
         -:  137:		{
-    #####:  138:			if (velha[i][j] == static_cast<int>(player))
+      558:  138:			if (velha[i][j] == static_cast<int>(player))
         -:  139:			{
-    #####:  140:				count++;
+      199:  140:				count++;
         -:  141:			}
         -:  142:		}
         -:  143:	}
         -:  144:
-    #####:  145:	return count;
+       62:  145:	return count;
         -:  146:}
         -:  147:
         -:  148:/** 
@@ -157,19 +157,19 @@
         -:  153: * Caso haja algum elemento vazio na matriz, retorna falso, do contrário, verdadeiro.
         -:  154: * 
         -:  155: */
-    #####:  156:bool isDraw(int velha[3][3])
+       12:  156:bool isDraw(int velha[3][3])
         -:  157:{
-    #####:  158:	for (auto i = 0; i < 3; i++)
+       26:  158:	for (auto i = 0; i < 3; i++)
         -:  159:	{
-    #####:  160:		for (auto j = 0; j < 3; j++)
+       66:  160:		for (auto j = 0; j < 3; j++)
         -:  161:		{
-    #####:  162:			if (velha[i][j] == 0)
+       52:  162:			if (velha[i][j] == 0)
         -:  163:			{
-    #####:  164:				return false;
+        8:  164:				return false;
         -:  165:			}
         -:  166:		}
         -:  167:	}
-    #####:  168:	return true;
+        4:  168:	return true;
         -:  169:}
         -:  170:
         -:  171:/** 
@@ -181,41 +181,41 @@
         -:  177: * que não há um mais de duas ocorrencias a mais de um jogador que do outro
         -:  178: * 
         -:  179: */
-    #####:  180:bool isImpossibleGame(int velha[3][3])
+       29:  180:bool isImpossibleGame(int velha[3][3])
         -:  181:{
-    #####:  182:	auto xplays = countPlays(velha, X);
-    #####:  183:	auto oplays = countPlays(velha, O);
-    #####:  184:	if (abs(xplays - oplays) > 2)
+       29:  182:	auto xplays = countPlays(velha, X);
+       29:  183:	auto oplays = countPlays(velha, O);
+       29:  184:	if (abs(xplays - oplays) > 2)
         -:  185:	{
-    #####:  186:		return true;
+        6:  186:		return true;
         -:  187:	}
         -:  188:
-    #####:  189:	auto winnerCounter = 0;
-    #####:  190:	for (auto linha = 0; linha < 3; linha++)
+       23:  189:	auto winnerCounter = 0;
+       92:  190:	for (auto linha = 0; linha < 3; linha++)
         -:  191:	{
-    #####:  192:		if (VerificaLinha(velha[linha]) > 0)
+       69:  192:		if (VerificaLinha(velha[linha]) > 0)
         -:  193:		{
-    #####:  194:			winnerCounter++;
+        5:  194:			winnerCounter++;
         -:  195:		}
         -:  196:	}
         -:  197:
-    #####:  198:	if (winnerCounter > 1)
+       23:  198:	if (winnerCounter > 1)
         -:  199:	{
-    #####:  200:		return true;
+        2:  200:		return true;
         -:  201:	}
         -:  202:
-    #####:  203:	for (auto col = 0; col < 3; col++)
+       84:  203:	for (auto col = 0; col < 3; col++)
         -:  204:	{
-    #####:  205:		if (VerificaColuna(velha, col) > 0)
+       63:  205:		if (VerificaColuna(velha, col) > 0)
         -:  206:		{
-    #####:  207:			winnerCounter++;
+        8:  207:			winnerCounter++;
         -:  208:		}
         -:  209:	}
         -:  210:
-    #####:  211:	if (winnerCounter > 1)
+       21:  211:	if (winnerCounter > 1)
         -:  212:	{
-    #####:  213:		return true;
+        2:  213:		return true;
         -:  214:	}
         -:  215:
-    #####:  216:	return false;
+       19:  216:	return false;
         -:  217:}

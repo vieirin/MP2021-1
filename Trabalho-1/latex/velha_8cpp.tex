@@ -1,0 +1,159 @@
+\hypertarget{velha_8cpp}{}\doxysection{velha.\+cpp File Reference}
+\label{velha_8cpp}\index{velha.cpp@{velha.cpp}}
+{\ttfamily \#include \char`\"{}velha.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{velha_8cpp_a9a79eba727abd2979d43ec648ed428e9}{Verifica\+Velha}} (int velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em verifica situacao do jogo da velha ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{velha_8cpp_a545ba689f7ba10654a817b2416a4fe1a}{Verifica\+Linha}} (int linha\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em verifica se uma linha contém um vencendor \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{velha_8cpp_ac5fa7bac3ce2b246a9a854c55e220599}{Verifica\+Coluna}} (int velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, int col)
+\begin{DoxyCompactList}\small\item\em verifica se uma dada coluna contém um vencedor \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{velha_8cpp_a7acb41a37ebdc8d7b7f413ef2e26d1f8}{Verifica\+Diagonal}} (int velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, Direcao dir)
+\begin{DoxyCompactList}\small\item\em verifica se uma dada diagonal contém um vencedor \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{velha_8cpp_aa1a903d78ae8f001c0fae70a111a23d3}{count\+Plays}} (int velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, Player player)
+\begin{DoxyCompactList}\small\item\em conta as ocorrências de um jogador (X ou O) na matriz \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{velha_8cpp_ae779fd416f530db3ca582ac86a8554f1}{is\+Draw}} (int velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em verifica se há um empate no jogo (matriz cheia sem vencedor) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{velha_8cpp_a6d56f233989cd07401940519cacad7bd}{is\+Impossible\+Game}} (int velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em verifica se é um jogo impossível \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{velha_8cpp_aa1a903d78ae8f001c0fae70a111a23d3}\label{velha_8cpp_aa1a903d78ae8f001c0fae70a111a23d3}} 
+\index{velha.cpp@{velha.cpp}!countPlays@{countPlays}}
+\index{countPlays@{countPlays}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{countPlays()}{countPlays()}}
+{\footnotesize\ttfamily int count\+Plays (\begin{DoxyParamCaption}\item[{int}]{velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{Player}]{player }\end{DoxyParamCaption})}
+
+
+
+conta as ocorrências de um jogador (X ou O) na matriz 
+
+\begin{DoxyAuthor}{Author}
+Manoel Vieira 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em velha} & matrix 3x3 com valores entre 0-\/3 \\
+\hline
+{\em player} & player a ser contado as ocorrencias\\
+\hline
+\end{DoxyParams}
+Visita cada elemento da matriz e retorna a quantidade de ocorrencias do jogados player no jogo recebido \mbox{\Hypertarget{velha_8cpp_ae779fd416f530db3ca582ac86a8554f1}\label{velha_8cpp_ae779fd416f530db3ca582ac86a8554f1}} 
+\index{velha.cpp@{velha.cpp}!isDraw@{isDraw}}
+\index{isDraw@{isDraw}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{isDraw()}{isDraw()}}
+{\footnotesize\ttfamily bool is\+Draw (\begin{DoxyParamCaption}\item[{int}]{velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+verifica se há um empate no jogo (matriz cheia sem vencedor) 
+
+\begin{DoxyAuthor}{Author}
+Manoel Vieira 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em velha} & matrix 3x3 com valores entre 0-\/3\\
+\hline
+\end{DoxyParams}
+Caso haja algum elemento vazio na matriz, retorna falso, do contrário, verdadeiro. \mbox{\Hypertarget{velha_8cpp_a6d56f233989cd07401940519cacad7bd}\label{velha_8cpp_a6d56f233989cd07401940519cacad7bd}} 
+\index{velha.cpp@{velha.cpp}!isImpossibleGame@{isImpossibleGame}}
+\index{isImpossibleGame@{isImpossibleGame}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{isImpossibleGame()}{isImpossibleGame()}}
+{\footnotesize\ttfamily bool is\+Impossible\+Game (\begin{DoxyParamCaption}\item[{int}]{velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+verifica se é um jogo impossível 
+
+\begin{DoxyAuthor}{Author}
+Manoel Vieira 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em velha} & matrix 3x3 com valores entre 0-\/3\\
+\hline
+\end{DoxyParams}
+A partir do numero de jogadas de cada jogador um jogo impossível é aquele em que não há um mais de duas ocorrencias a mais de um jogador que do outro \mbox{\Hypertarget{velha_8cpp_ac5fa7bac3ce2b246a9a854c55e220599}\label{velha_8cpp_ac5fa7bac3ce2b246a9a854c55e220599}} 
+\index{velha.cpp@{velha.cpp}!VerificaColuna@{VerificaColuna}}
+\index{VerificaColuna@{VerificaColuna}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{VerificaColuna()}{VerificaColuna()}}
+{\footnotesize\ttfamily int Verifica\+Coluna (\begin{DoxyParamCaption}\item[{int}]{velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+verifica se uma dada coluna contém um vencedor 
+
+\begin{DoxyAuthor}{Author}
+Manoel Vieira 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em linha} & vetor de tamanho 3 com valores entre 0-\/3 \\
+\hline
+{\em col} & coluna a ser verificada\\
+\hline
+\end{DoxyParams}
+Extrai a coluna requerida em forma de linha e retorna o resultado de Verifica\+Linha \mbox{\Hypertarget{velha_8cpp_a7acb41a37ebdc8d7b7f413ef2e26d1f8}\label{velha_8cpp_a7acb41a37ebdc8d7b7f413ef2e26d1f8}} 
+\index{velha.cpp@{velha.cpp}!VerificaDiagonal@{VerificaDiagonal}}
+\index{VerificaDiagonal@{VerificaDiagonal}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{VerificaDiagonal()}{VerificaDiagonal()}}
+{\footnotesize\ttfamily int Verifica\+Diagonal (\begin{DoxyParamCaption}\item[{int}]{velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{Direcao}]{dir }\end{DoxyParamCaption})}
+
+
+
+verifica se uma dada diagonal contém um vencedor 
+
+\begin{DoxyAuthor}{Author}
+Manoel Vieira 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em linha} & vetor de tamanho 3 com valores entre 0-\/3 \\
+\hline
+{\em dir} & direção da diagonal (esquerda ou direita)\\
+\hline
+\end{DoxyParams}
+Extrai a diagonal requerida em forma de linha e retorna o resultado de Verifica\+Linha \mbox{\Hypertarget{velha_8cpp_a545ba689f7ba10654a817b2416a4fe1a}\label{velha_8cpp_a545ba689f7ba10654a817b2416a4fe1a}} 
+\index{velha.cpp@{velha.cpp}!VerificaLinha@{VerificaLinha}}
+\index{VerificaLinha@{VerificaLinha}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{VerificaLinha()}{VerificaLinha()}}
+{\footnotesize\ttfamily int Verifica\+Linha (\begin{DoxyParamCaption}\item[{int}]{linha\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+verifica se uma linha contém um vencendor 
+
+\begin{DoxyAuthor}{Author}
+Manoel Vieira 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em linha} & vetor de tamanho 3 com valores entre 0-\/3\\
+\hline
+\end{DoxyParams}
+Verifica se todas as ocorrências da linha são iguais, caso verdadeiro retorna o valor do elemento repetido (1(x) ou 2(o)), caso falso retorna -\/1 (indefinido); \mbox{\Hypertarget{velha_8cpp_a9a79eba727abd2979d43ec648ed428e9}\label{velha_8cpp_a9a79eba727abd2979d43ec648ed428e9}} 
+\index{velha.cpp@{velha.cpp}!VerificaVelha@{VerificaVelha}}
+\index{VerificaVelha@{VerificaVelha}!velha.cpp@{velha.cpp}}
+\doxysubsubsection{\texorpdfstring{VerificaVelha()}{VerificaVelha()}}
+{\footnotesize\ttfamily int Verifica\+Velha (\begin{DoxyParamCaption}\item[{int}]{velha\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+verifica situacao do jogo da velha ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+Manoel Vieira 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em velha} & Matrix 3x3 com valores entre 0-\/3\\
+\hline
+\end{DoxyParams}
+Verifica se o jogo recebido tem um ganhador, se é impossível 

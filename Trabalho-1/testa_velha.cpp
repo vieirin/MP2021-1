@@ -112,22 +112,22 @@ TEST_CASE("Testa é jogo impossível")
 	int teste1[3][3] = {{2, 0, 1},
 						{2, 2, 1},
 						{0, 2, 2}};
-	REQUIRE(isImpossibleGame(teste1) == true);
+	REQUIRE(isImpossibleGame(teste1));
 
 	int teste2[3][3] = {{2, 0, 1},
 						{2, 2, 1},
 						{0, 0, 0}};
-	REQUIRE(isImpossibleGame(teste2) == false);
+	REQUIRE_FALSE(isImpossibleGame(teste2));
 
 	int teste3[3][3] = {{2, 2, 2},
 						{2, 2, 2},
 						{2, 2, 2}};
-	REQUIRE(isImpossibleGame(teste3) == true);
+	REQUIRE(isImpossibleGame(teste3));
 
 	int teste4[3][3] = {{1, 1, 1},
 						{1, 1, 1},
 						{1, 1, 1}};
-	REQUIRE(isImpossibleGame(teste4) == true);
+	REQUIRE(isImpossibleGame(teste4));
 }
 
 TEST_CASE("Testa jogo indefinido")
@@ -154,10 +154,18 @@ TEST_CASE("Testa empate")
 	int teste1[3][3] = {{1, 2, 1},
 						{2, 1, 2},
 						{2, 1, 2}};
-	REQUIRE(isDraw(teste1) == true);
+	REQUIRE(isDraw(teste1));
 
 	int teste2[3][3] = {{1, 2, 1},
 						{2, 0, 2},
 						{2, 1, 2}};
-	REQUIRE(isDraw(teste2) == false);
+	REQUIRE_FALSE(isDraw(teste2));
+}
+
+TEST_CASE("Testa empate impossível")
+{
+	int teste1[3][3] = {{2, 2, 1},
+						{2, 2, 1},
+						{2, 2, 2}};
+	REQUIRE_FALSE(isDraw(teste1));
 }

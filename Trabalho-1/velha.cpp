@@ -155,6 +155,8 @@ int countPlays(int velha[3][3], Player player)
  */
 bool isDraw(int velha[3][3])
 {
+	if (isImpossibleGame(velha))
+		return false;
 	for (auto i = 0; i < 3; i++)
 	{
 		for (auto j = 0; j < 3; j++)
